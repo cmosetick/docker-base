@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER "Chris Mosetick" <cmosetick@gmail.com>
+LABEL maintainer "Chris Mosetick <cmosetick@gmail.com>"
 
 ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /root
@@ -9,7 +9,7 @@ WORKDIR /root
 RUN \
 sed -i 's@http://archive.ubuntu.com/ubuntu/@http://ubuntu.osuosl.org/ubuntu@g' /etc/apt/sources.list && \
 apt-get -qq update && \
-apt-get -yqq install git nano nmap htop curl inetutils-ping dnsutils software-properties-common man
+apt-get -yqq install nano nmap htop curl inetutils-ping dnsutils software-properties-common man telnet tcpdump
 
 RUN \
 apt-add-repository -y ppa:git-core && \
